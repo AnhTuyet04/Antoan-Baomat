@@ -1,0 +1,24 @@
+def caesar_cipher(vbgoc: str, k: int) -> str:
+    vbmahoa = ""
+    for char in vbgoc:
+        if char.isalpha():
+            # Xác định chữ hoa hay thường
+            base = ord('A') if char.isupper() else ord('a')
+            # Dịch chuyển theo k
+            vbmahoa += chr((ord(char) - base + k) % 26 + base)
+            #ord(char) → lấy mã ASCII của ký tự.
+            #ord(char) - base → đưa ký tự về vị trí 0–25 trong bảng chữ cái.
+        else:
+            # Giữ nguyên ký tự không phải chữ cái
+            vbmahoa += char
+    return vbmahoa
+
+
+if __name__ == "__main__": #Python kiểm tra xem file đang được chạy trực tiếp (không phải import từ nơi khác)
+    # Nhập từ bàn phím
+    vbgoc = input("Nhập văn bản gốc cần mã hóa (ví dụ: TenCuaBan): ")
+    k = int(input("Nhập secret key cho việc mã hóa (ví dụ: STT): "))
+
+    # Mã hóa
+    vbmahoa = caesar_cipher(vbgoc, k)
+    print(f"\nCiphertext - kết quả sau khi được mã hóa: {vbmahoa}\n")
