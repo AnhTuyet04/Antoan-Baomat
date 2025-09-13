@@ -11,11 +11,10 @@ def mhThayThe(plaintext, k):
     return ciphertext
 
 if __name__ == "__main__": 
-    
     plaintext = input("Nhập văn bản gốc cần mã hóa (ví dụ: TenCuaBan): ")
     k = int(input("Nhập secret key cho việc mã hóa (ví dụ: STT): "))
-    
     ciphertext = mhThayThe(plaintext, k)
+    
     print(f'''
     Plaintext - dữ liệu ban đầu: {plaintext}
     Key: {k}
